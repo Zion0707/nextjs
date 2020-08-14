@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Button } from 'antd';
 import Mock from 'mockjs';
 
 export default function Project() {
@@ -13,27 +11,17 @@ export default function Project() {
         ],
     });
 
-    const router = useRouter();
-    const routeGo = (id) => {
-        console.log(id);
-        router.push({ pathname: `/project/${id}` });
-    };
-
     return (
         <div className="page project-page">
             <h4>Project</h4>
-            <img src="/images/01.png" />
+            <img src="/images/1.png" />
             <ul>
                 {list.map((item) => {
                     return (
                         <li key={item.id}>
-                            <Button
-                                onClick={() => {
-                                    routeGo(item.id);
-                                }}
-                            >
+                            <Link href="/project/[id]" as={`/project/${item.id}`}>
                                 {item.name}
-                            </Button>
+                            </Link>
                         </li>
                     );
                 })}

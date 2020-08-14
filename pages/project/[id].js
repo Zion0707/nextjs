@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { Button } from 'antd';
-import { useRouter } from 'next/router';
-function ProjectId() {
-    const router = useRouter();
+import router from 'next/router';
 
+function ProjectId() {
     useEffect(() => {
-        console.log(router);
+        console.log(router.query);
     }, []);
 
     return (
