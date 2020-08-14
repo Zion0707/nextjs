@@ -26,7 +26,7 @@ export default function Project() {
                     );
                 })}
             </ul>
-            <Link href="/">
+            <Link href="/index">
                 <a>go home</a>
             </Link>
         </div>

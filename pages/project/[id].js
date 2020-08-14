@@ -5,6 +5,7 @@ import Link from 'next/link';
 function ProjectId() {
     const [id, setId] = useState('');
     useEffect(() => {
+        console.log(router.query);
         setId(router.query.id);
     }, []);
     return (
