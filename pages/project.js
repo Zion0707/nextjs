@@ -16,17 +16,19 @@ export default function Project() {
             <h4>Project</h4>
             <img src="/images/1.png" />
             <ul>
-                {list.map((item) => {
+                {list.map((item, index) => {
                     return (
-                        <li key={item.id}>
+                        <li key={index}>
                             <Link href="/project/[id]" as={`/project/${item.id}`}>
-                                {item.name}
+                                <a>{item.name}</a>
                             </Link>
                         </li>
                     );
                 })}
             </ul>
-            <Link href="/">go home</Link>
+            <Link href="/">
+                <a>go home</a>
+            </Link>
         </div>
     );
 }
