@@ -1,8 +1,8 @@
-import '../../styles/home.module.less';
-import { Button } from 'antd';
 import { useState, useEffect } from 'react';
+import { Button } from 'antd';
 import Link from 'next/link';
 import { addition } from '../../utils';
+import '../../styles/home.module.less';
 
 export default function Home() {
     const [msg, setMsg] = useState('');
