@@ -14,6 +14,8 @@ module.exports = {
     plugins: ['react'],
     rules: {
         'no-var': 2,
+        'no-alert': 2,
+        'no-console': 1,
         'comma-dangle': 0,
         'space-before-function-paren': 0,
         'react/react-in-jsx-scope': 0,

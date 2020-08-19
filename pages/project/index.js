@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Mock from 'mockjs';
+import { useEffect } from 'react';
 
 export default function Project() {
     const { list } = Mock.mock({
@@ -10,6 +11,8 @@ export default function Project() {
             },
         ],
     });
+
+    useEffect(() => {}, []);
 
     return (
         <div className="page project-page">
