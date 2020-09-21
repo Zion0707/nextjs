@@ -1,17 +1,9 @@
 import Link from 'next/link';
-import Mock from 'mockjs';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { Button } from 'antd';
 
-export default function Project() {
-    const { list } = Mock.mock({
-        'list|1-10': [
-            {
-                'id|+1': 1,
-                name: '@name',
-            },
-        ],
-    });
-
+export default function Project({ list }) {
     useEffect(() => {}, []);
 
     return (
@@ -23,15 +15,26 @@ export default function Project() {
                     return (
                         <li key={index}>
                             <Link href="/project/[id]" as={`/project/${item.id}`}>
-                                <a>{item.name}</a>
+                                <a>{item.title}</a>
                             </Link>
                         </li>
                     );
                 })}
             </ul>
             <Link href="/index">
-                <a>go home</a>
+                <Button>go home</Button>
             </Link>
         </div>
     );
 }
+
+// 从服务中请求接口
+export const getServerSideProps = async () => {
+    const res = await axios.post('http://localhost:7001/api/next/list');
+    const list = res.data.list;
+    return {
+        props: {
+            list,
+        },
+    };
+};
